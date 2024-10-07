@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('Clone repository') {
             steps {
-                git branch: 'master', url: ''
+                git branch: 'main', url: 'https://github.com/VeeraK81/doordash-copycat.git'
             }
         }
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build('simple-scraper:latest')
+                    docker.build('doordash-fee-service:latest')
                 }
             }
         }
